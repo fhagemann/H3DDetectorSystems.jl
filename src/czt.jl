@@ -5,6 +5,9 @@ end
 
 
 function get_czt_data(cam::PolarisDetector, time::Number, basename::String)
+
+    time = Float64(time)
+
     task_cam =  open(cam) do dev
         read(dev.data_io, PolarisEvents, max_time = time)
     end
