@@ -34,7 +34,7 @@ end
 
 function stop_sync_pulses(hostname::String)
     cam = PolarisDetector(hostname)
-    reset_sync_pulse_generation(cam)
+    stop_sync_pulses(cam)
 end
 
 
