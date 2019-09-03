@@ -13,5 +13,6 @@ using Unitful
 include("polaris_data.jl")
 include("datastream.jl")
 include("polaris_detector.jl")
+include("czt.jl")
 
 end # module
