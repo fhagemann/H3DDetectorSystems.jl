@@ -45,7 +45,7 @@ function Base.read!(
     max_nevents::Int = typemax(Int),
     max_time::Float64 = Inf
 )
-    time_in_ns(timestamp::UInt64) = Int64(timestamp >> 5) * 10
+    time_in_ns(timestamp::UInt64) = Int64(timestamp) * 10
 
     try
         evtno_offset = if !isempty(events.evt_no)
@@ -104,7 +104,7 @@ function Base.read!(
                     @assert t >= 0
                 else
                     nhits = Int(nhits_tmp)
-                    (1 <= nhits <= 121) || throw(ErrorException("Invalid number of hits ($nhits) in datastream"))     
+                    (1 <= nhits <= 121) || throw(ErrorException("Invalid number of hits ($nhits) in datastream"))
                     evthdr = read(input, PolarisEventHeader)
                     t = time_in_ns(evthdr.timestamp)
                     for i in 1:nhits
