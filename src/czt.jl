@@ -36,3 +36,7 @@ function stop_sync_pulses(hostname::String)
     cam = PolarisDetector(hostname)
     reset_sync_pulse_generation(cam)
 end
+
+export get_czt_data
+export start_sync_pulses
+export stop_sync_pulses
