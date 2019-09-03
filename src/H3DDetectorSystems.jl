@@ -8,6 +8,7 @@ using Sockets
 
 using ArraysOfArrays
 using BufferedStreams
+using Tables
 using Unitful
 
 include("polaris_data.jl")
