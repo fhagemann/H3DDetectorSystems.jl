@@ -9,7 +9,12 @@ using Sockets
 using ArraysOfArrays
 using BufferedStreams
 using Tables
+using TypedTables
 using Unitful
+
+using LegendDataTypes: readdata, writedata
+using LegendHDF5IO
+import HDF5
 
 include("polaris_data.jl")
 include("datastream.jl")
