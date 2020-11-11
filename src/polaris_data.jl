@@ -133,7 +133,7 @@ function Base.read!(
         end
     catch err
         if isa(err, EOFError)
-            info("Input was truncated.")
+            @info "Input was truncated."
         else
             rethrow()
         end
